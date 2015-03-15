@@ -1,1 +1,3 @@
 # codejam
+
+Codejam solutions
