@@ -38,7 +38,6 @@ public class ReverseWords {
 				System.out.println();
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
 		} finally {
 			try {
 				br.close();
