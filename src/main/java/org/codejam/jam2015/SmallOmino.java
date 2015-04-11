@@ -16,7 +16,7 @@ public class SmallOmino {
 
 	public static void main(String a[]) {
 		SmallOmino omino = new SmallOmino();
-		Scanner in = new Scanner(omino.getFileStream("D-small-attempt3.in"));
+		Scanner in = new Scanner(omino.getFileStream("D-small-attempt6.in"));
 		//Scanner in = new Scanner(System.in);
 
 		try {
@@ -41,20 +41,41 @@ public class SmallOmino {
 	}
 
 	private void analyseShapes(int x, int r, int c, int caseNo) {
+		Dimensions otherDim = new Dimensions(r, c);
 		Dimensions xDim = null;
+
 		if(isPerfectSquare(x)) {
 			int sqrt = (int) Math.sqrt(x);
-			xDim = new Dimensions(sqrt, sqrt);
+			if(x  == otherDim.x || x == otherDim.y) {
+				xDim = new Dimensions(sqrt, sqrt);
+			} else {
+				xDim = new Dimensions(1, x);
+			}
 		} else {
 			xDim = new Dimensions(1, x);
 		}
 
-		Dimensions otherDim = new Dimensions(r, c);
-
-		
-		
-		System.out.format("Case #%d: %s\n", caseNo, "RICHARD");
-		System.out.format("Case #%d: %s\n", caseNo, "RICHARD");
+		if((xDim.x * xDim.y) == (otherDim.x * otherDim.y)) {
+			if(xDim.y == otherDim.x || xDim.y == otherDim.y) {
+				System.out.format("Case #%d: %s\n", caseNo, "GABRIEL");
+			} else {
+				System.out.format("Case #%d: %s\n", caseNo, "RICHARD");
+			}
+		} else {
+			if(xDim.y != 1 && (otherDim.x * otherDim.y) % (xDim.x * xDim.y) == 0) {
+				if(xDim.y == otherDim.x || xDim.y == otherDim.y) {
+					System.out.format("Case #%d: %s\n", caseNo, "GABRIEL");
+				} else {
+					System.out.format("Case #%d: %s\n", caseNo, "RICHARD");	
+				}
+			} else {
+				if(xDim.y == otherDim.x || xDim.y == otherDim.y) {
+					System.out.format("Case #%d: %s\n", caseNo, "GABRIEL");
+				} else {
+					System.out.format("Case #%d: %s\n", caseNo, "RICHARD");	
+				}
+			}
+		}
 	}
 
 	private boolean isValidInput(int num) {
