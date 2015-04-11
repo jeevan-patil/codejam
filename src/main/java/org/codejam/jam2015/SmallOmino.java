@@ -55,6 +55,7 @@ public class SmallOmino {
 			xDim = new Dimensions(1, x);
 		}
 
+		// following code has become just mess, 
 		if((xDim.x * xDim.y) == (otherDim.x * otherDim.y)) {
 			if(xDim.y == otherDim.x || xDim.y == otherDim.y) {
 				System.out.format("Case #%d: %s\n", caseNo, "GABRIEL");
