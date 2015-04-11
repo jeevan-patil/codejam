@@ -19,8 +19,8 @@ public class HouseOfPancakesSmall {
 
 	public static void main(String a[]) {
 		HouseOfPancakesSmall hop = new HouseOfPancakesSmall();
-		Scanner in = new Scanner(hop.getFileStream("B-small-attempt4.in"));
-		//Scanner in = new Scanner(System.in);
+		//Scanner in = new Scanner(hop.getFileStream("B-small-attempt5.in"));
+		Scanner in = new Scanner(System.in);
 
 		try {
 			int testCases = in.nextInt();
@@ -55,7 +55,8 @@ public class HouseOfPancakesSmall {
 		if(mostNoOfCakes <= 0) {
 			System.out.format("Case #%d: %d\n", caseNo, minutes);
 		} else {
-			if((originalDinerSize * 2) <= mostNoOfCakes || (mostNoOfCakes % 2 == 0)) {
+			//(originalDinerSize * 2) <= mostNoOfCakes || (mostNoOfCakes % 2 == 0)
+			if(mostNoOfCakes > 1) {
 				interrupt(diners);
 			} else {
 				eat(diners);
